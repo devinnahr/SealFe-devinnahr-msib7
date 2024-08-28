@@ -6,17 +6,6 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter();
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleNavigation = (href) => {
-    router.push(href);
-    setIsOpen(false); // Close menu on navigation
-  };
   
   return (
     <nav className="bg-gray-800">
@@ -27,12 +16,12 @@ export default function Navbar() {
               type="button"
               className="inline-flex items-center justify-center p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
-              aria-expanded={isOpen}
-              onClick={toggleMenu}
+              aria-expanded=""
+              onClick=""
             >
               <span className="sr-only">Open main menu</span>
               <svg
-                className={`h-6 w-6 ${isOpen ? "hidden" : "block"}`}
+                className={`h-6 w-6`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
@@ -46,7 +35,7 @@ export default function Navbar() {
                 />
               </svg>
               <svg
-                className={`h-6 w-6 ${isOpen ? "block" : "hidden"}`}
+                className={`h-6 w-6`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
@@ -125,7 +114,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className={`sm:hidden ${isOpen ? "block" : "hidden"}`} id="mobile-menu">
+      <div className={`sm:hidden`} id="mobile-menu">
         <div className="space-y-1 px-2 pb-3 pt-2">
           <Link
             href="/"
