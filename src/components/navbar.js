@@ -1,9 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +17,7 @@ export default function Navbar() {
     router.push(href);
     setIsOpen(false); // Close menu on navigation
   };
-
+  
   return (
     <nav className="bg-gray-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
