@@ -1,4 +1,5 @@
-"use client";
+'use client';
+import { useState, useEffect } from 'react';
 
 import Image from 'next/image';
 
@@ -10,7 +11,7 @@ const Footer = () => {
         <div className="flex flex-wrap justify-between">
           {/* Company Info */}
           <div className="w-full md:w-1/3 mb-8">
-            <img
+            <Image
               alt="Company name"
               src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
               width={100}
