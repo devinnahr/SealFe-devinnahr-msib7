@@ -17,7 +17,6 @@ export default function Navbar() {
     return router?.pathname === href;
   };
 
-
   return (
     <nav className="bg-gray-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -73,25 +72,19 @@ export default function Navbar() {
               <div className="flex space-x-4">
                 <Link
                   href="/"
-                  className={`rounded-md px-3 py-2 text-sm font-medium ${
-                    isActive("/") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"
-                  }`}
+                  className={`rounded-md px-3 py-2 text-sm font-medium ${isActive("/") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"}`}
                 >
                   Beranda
                 </Link>
                 <Link
                   href="/terbaru"
-                  className={`rounded-md px-3 py-2 text-sm font-medium ${
-                    isActive("/terbaru") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"
-                  }`}
+                  className={`rounded-md px-3 py-2 text-sm font-medium ${isActive("/terbaru") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"}`}
                 >
                   Terbaru
                 </Link>
                 <Link
                   href="/hiburan"
-                  className={`rounded-md px-3 py-2 text-sm font-medium ${
-                    isActive("/hiburan") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"
-                  }`}
+                  className={`rounded-md px-3 py-2 text-sm font-medium ${isActive("/hiburan") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"}`}
                 >
                   Hiburan
                 </Link>
@@ -135,25 +128,19 @@ export default function Navbar() {
         <div className="space-y-1 px-2 pb-3 pt-2">
           <Link
             href="/"
-            className={`block rounded-md px-3 py-2 text-base font-medium ${
-              isActive("/") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"
-            }`}
+            className={`block rounded-md px-3 py-2 text-base font-medium ${isActive("/") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"}`}
           >
             Beranda
           </Link>
           <Link
             href="/terbaru"
-            className={`block rounded-md px-3 py-2 text-base font-medium ${
-              isActive("/terbaru") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"
-            }`}
+            className={`block rounded-md px-3 py-2 text-base font-medium ${isActive("/terbaru") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"}`}
           >
             Terbaru
           </Link>
           <Link
             href="/hiburan"
-            className={`block rounded-md px-3 py-2 text-base font-medium ${
-              isActive("/hiburan") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"
-            }`}
+            className={`block rounded-md px-3 py-2 text-base font-medium ${isActive("/hiburan") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"}`}
           >
             Hiburan
           </Link>
