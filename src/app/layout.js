@@ -1,3 +1,5 @@
+"use client"; // Add this line at the top to mark the component as a client component
+
 import { Inter } from "next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
