@@ -39,7 +39,7 @@ export default async function Page() {
             <p className="text-gray-600">Brief description of the featured news article goes here.</p>
           </div>
           <div className="w-1/2 pr-4">
-            <img
+            <Image
               src="/hero.jpg"
               alt="Featured News"
               className="w-full h-auto object-cover rounded-lg"
