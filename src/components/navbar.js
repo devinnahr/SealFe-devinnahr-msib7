@@ -2,16 +2,12 @@
 
 import Image from 'next/image';
 import { useState } from "react";
-import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
+import { useRouter } from "next/router"; // Directly import useRouter
 import Link from "next/link";
-
-// Dynamically import useRouter only on the client-side
-const useRouter = dynamic(() => import("next/router").then(mod => mod.useRouter), { ssr: false });
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter ? useRouter() : null; // Use router only if it's available
+  const router = useRouter(); // Directly use useRouter
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -20,6 +16,7 @@ export default function Navbar() {
   const isActive = (href) => {
     return router?.pathname === href;
   };
+
 
   return (
     <nav className="bg-gray-800">
