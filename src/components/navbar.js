@@ -7,14 +7,14 @@ import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter(); // Always call useRouter
+  const router = useRouter(); // Use router inside client component
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const isActive = (href) => {
-    return router ? router.pathname === href : false;
+    return router.pathname === href;
   };
 
   return (
