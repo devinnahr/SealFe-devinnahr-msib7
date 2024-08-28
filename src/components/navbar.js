@@ -1,20 +1,24 @@
-"use client";
+'use client';
 
 import Image from 'next/image';
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
+// Dynamically import useRouter only on the client-side
+const useRouter = dynamic(() => import("next/router").then(mod => mod.useRouter), { ssr: false });
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter(); // Use router inside client component
+  const router = useRouter ? useRouter() : null; // Use router only if it's available
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const isActive = (href) => {
-    return router.pathname === href;
+    return router?.pathname === href;
   };
 
   return (
