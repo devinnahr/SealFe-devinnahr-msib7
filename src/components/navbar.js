@@ -1,4 +1,5 @@
-'use client';
+"use client";
+
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
@@ -6,7 +7,7 @@ import Link from 'next/link';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter(); // Use the hook directly at the top level
+  const router = useRouter(); // This is a client-side hook
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
