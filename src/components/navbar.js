@@ -1,19 +1,19 @@
 'use client';
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router'; // Import useRouter directly
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter(); // Call useRouter unconditionally
+  const router = useRouter(); // Use the hook directly at the top level
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const isActive = (href) => {
-    return router?.pathname === href;
+    return router.pathname === href;
   };
 
   return (
