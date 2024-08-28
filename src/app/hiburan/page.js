@@ -1,4 +1,4 @@
-// src/app/page.js
+'use client';
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
@@ -17,8 +17,18 @@ async function fetchPosts() {
   }
 }
 
-export default async function Page() {
-  const posts = await fetchPosts();
+export default function Page() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const loadPosts = async () => {
+      const fetchedPosts = await fetchPosts();
+      setPosts(fetchedPosts);
+    };
+
+    loadPosts();
+  }, []);
+
   return (
     <main className="container mx-auto px-4 py-8">
       <section className="mb-8">
