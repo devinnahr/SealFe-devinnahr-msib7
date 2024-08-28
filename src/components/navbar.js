@@ -2,19 +2,20 @@
 
 import Image from 'next/image';
 import { useState } from "react";
-import { useRouter } from "next/router"; // Directly import useRouter
+import { useRouter } from "next/router";
 import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter(); // Directly use useRouter
+  const router = useRouter();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const isActive = (href) => {
-    return router?.pathname === href;
+  const handleNavigation = (href) => {
+    router.push(href);
+    setIsOpen(false); // Close menu on navigation
   };
 
   return (
@@ -72,19 +73,19 @@ export default function Navbar() {
               <div className="flex space-x-4">
                 <Link
                   href="/"
-                  className={`rounded-md px-3 py-2 text-sm font-medium ${isActive("/") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"}`}
+                  className="rounded-md px-3 py-2 text-sm font-medium"
                 >
                   Beranda
                 </Link>
                 <Link
                   href="/terbaru"
-                  className={`rounded-md px-3 py-2 text-sm font-medium ${isActive("/terbaru") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"}`}
+                  className="rounded-md px-3 py-2 text-sm font-medium"
                 >
                   Terbaru
                 </Link>
                 <Link
                   href="/hiburan"
-                  className={`rounded-md px-3 py-2 text-sm font-medium ${isActive("/hiburan") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"}`}
+                  className="rounded-md px-3 py-2 text-sm font-medium"
                 >
                   Hiburan
                 </Link>
@@ -128,19 +129,19 @@ export default function Navbar() {
         <div className="space-y-1 px-2 pb-3 pt-2">
           <Link
             href="/"
-            className={`block rounded-md px-3 py-2 text-base font-medium ${isActive("/") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"}`}
+            className="block rounded-md px-3 py-2 text-base font-medium"
           >
             Beranda
           </Link>
           <Link
             href="/terbaru"
-            className={`block rounded-md px-3 py-2 text-base font-medium ${isActive("/terbaru") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"}`}
+            className="block rounded-md px-3 py-2 text-base font-medium"
           >
             Terbaru
           </Link>
           <Link
             href="/hiburan"
-            className={`block rounded-md px-3 py-2 text-base font-medium ${isActive("/hiburan") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"}`}
+            className="block rounded-md px-3 py-2 text-base font-medium"
           >
             Hiburan
           </Link>
